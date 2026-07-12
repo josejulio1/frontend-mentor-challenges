@@ -9,8 +9,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Development](#development)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -20,7 +20,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- [Solution](https://github.com/josejulio1/frontend-mentor-challenges/qr-code-component)
+- [Solution](https://github.com/josejulio1/frontend-mentor-challenges/tree/master/qr-code-component)
 - [Live Site](https://qr-code-component-josejulio.netlify.app)
 
 ## My process
@@ -32,7 +32,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - BEM Methodology
 - Flexbox
 
-### The process
+### Development
 
 I have organized the project in 2 folders: images and styles for the CSS, and in the root of project, the HTML.
 
