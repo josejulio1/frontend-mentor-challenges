@@ -1,0 +1,125 @@
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--grey-100);
+    font-family: 'Poppins';
+}
+
+.age-calculator {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 1.6rem 1.6rem 16rem 1.6rem;
+}
+
+@media (min-width: 1440px) {
+    .age-calculator {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1439px) {
+    .age-calculator {
+        width: 95%;
+    }
+}
+
+.age-calculator__fields {
+    display: flex;
+    gap: 2rem;
+}
+
+@media (max-width: 992px) {
+    .age-calculator__fields {
+        flex-direction: column;
+    }
+}
+
+.fields__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: .4rem;
+    width: 100%;
+}
+
+.fields__item:not(.error) .item__error {
+    display: none;
+}
+
+.fields__item label {
+    color: var(--grey-500);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 25%;
+    font-family: 'Poppins Extrabold';
+}
+
+.fields__item input {
+    font-size: 2rem;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    border: 2px solid var(--grey-200);
+    font-weight: 800;
+    width: 100%;
+}
+
+.fields__item input::placeholder {
+    color: var(--grey-500);
+}
+
+.item__error {
+    color: var(--red-400);
+}
+
+.age-calculator__divider {
+    position: relative;
+    display: flex;
+}
+
+.divider__line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--grey-100);
+}
+
+.divider__circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--purple-500);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+@media (min-width: 992px) {
+    .divider__circle {
+        right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .divider__circle {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.results__item {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    font-style: italic;
+    font-weight: 800;
+    font-family: 'Poppins Bold';
+}
+
+.item__span {
+    color: var(--purple-500);
+}

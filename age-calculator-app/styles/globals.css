@@ -1,0 +1,35 @@
+:root {
+    --purple-500: hsl(259, 100%, 65%);
+    --red-400: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 100%, 100%);
+    --grey-100: hsl(0, 0%, 94%);
+    --grey-200: hsl(0, 0%, 86%);
+    --grey-500: hsl(0, 1%, 44%);
+    --black: hsl(0, 0%, 0%);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins Extrabold';
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
