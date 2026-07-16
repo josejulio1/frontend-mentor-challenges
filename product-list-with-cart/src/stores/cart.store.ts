@@ -1,13 +1,11 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware";
-import type { ProductImage, ProductName, ProductPrice } from "../models/product.model";
+import type { Product, ProductName } from "../models/product.model";
 
-type ProductWithoutQuantity = Omit<ProductCart, 'quantity'>;
+type ProductWithoutCategory = Omit<Product, 'category'>;
 
 export interface ProductCart {
-    name: ProductName
-    price: ProductPrice
-    image: ProductImage
+    product: ProductWithoutCategory
     quantity: number
 }
 
@@ -15,7 +13,7 @@ interface CartState {
     products: ProductCart[]
     reset: () => void
     getProduct: (productName: ProductName) => ProductCart | null
-    addProduct: (product: ProductWithoutQuantity) => void
+    addProduct: (product: Product) => void
     removeProduct: (productName: ProductName) => void
 }
 
@@ -30,22 +28,22 @@ const useCart = create<CartState>()(
                 }));
             },
             getProduct: (productName) => {
-                return get().products.find(productCart => productCart.name === productName) || null;
+                return get().products.find(productCart => productCart.product.name === productName) || null;
             },
             addProduct: (product) => {
                 set(state => ({
                     ...state,
-                    products: state.products.find(productCart => productCart.name === product.name)
-                        ? state.products.map(productCart => productCart.name === product.name ? { ...productCart, quantity: productCart.quantity+ 1 } : productCart)
-                        : [ ...state.products, { ...product, quantity: 1 } ]
+                    products: state.products.find(productCart => productCart.product.name === product.name)
+                        ? state.products.map(productCart => productCart.product.name === product.name ? { ...productCart, quantity: productCart.quantity + 1 } : productCart)
+                        : [ ...state.products, { product, quantity: 1 } ]
                 }));
             },
             removeProduct: (productName) => {
                 set(state => ({
                     ...state,
-                    products: state.products.find(productCart => productCart.name === productName && productCart.quantity > 1)
-                        ? state.products.map(productCart => productCart.name === productName ? { ...productCart, quantity: productCart.quantity - 1 } : productCart)
-                        : state.products.filter(productCart => productCart.name !== productName)
+                    products: state.products.find(productCart => productCart.product.name === productName && productCart.quantity > 1)
+                        ? state.products.map(productCart => productCart.product.name === productName ? { ...productCart, quantity: productCart.quantity - 1 } : productCart)
+                        : state.products.filter(productCart => productCart.product.name !== productName)
                 }));
             }
         }),

@@ -23,17 +23,17 @@ function Cart() {
                             <section className="flex flex-col gap-y-6">
                                 <section className="max-h-140 overflow-y-auto">
                                     {
-                                        products.map(product => (
+                                        products.map(productCart => (
                                             <CartItem
-                                                key={product.name}
-                                                product={product}
+                                                key={productCart.product.name}
+                                                productCart={productCart}
                                             />
                                         ))
                                     }
                                 </section>
                                 <article className="flex justify-between items-center">
                                     <span>Total</span>
-                                    <span className="text-3xl font-bold">${products.reduce((accumulator, productCart) => accumulator + (productCart.price * productCart.quantity), 0).toFixed(2)}</span>
+                                    <span className="text-3xl font-bold">${products.reduce((accumulator, productCart) => accumulator + (productCart.product.price * productCart.quantity), 0).toFixed(2)}</span>
                                 </article>
                                 <article className="flex justify-center items-center gap-x-4 bg-rose-50 p-4 rounded-xl">
                                     <img

@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import Cart from "./components/cart/Cart";
 import OrderConfirmedModal from "./components/order-confirmed-modal/OrderConfirmedModal";
 import ProductCard from "./components/product-card/ProductCard";
 import products from "./data/data.json";
 import useModal from "./stores/modal.store";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
     const { isOpen } = useModal();
+
+    useEffect(() => {
+        document.body.classList.toggle('overflow-y-hidden');
+    }, [isOpen]);
 
     return (
         <>
@@ -25,9 +31,11 @@ function App() {
                 </section>
                 <Cart />
             </main>
-            {
-                isOpen && <OrderConfirmedModal />
-            }
+            <AnimatePresence>
+                {
+                    isOpen && <OrderConfirmedModal />
+                }
+            </AnimatePresence>
         </>
     );
 }
