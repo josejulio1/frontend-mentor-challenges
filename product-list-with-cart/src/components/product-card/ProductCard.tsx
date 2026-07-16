@@ -1,7 +1,7 @@
 import type { Product } from "../../models/product.model";
 import useCart from "../../stores/cart.store";
 
-const classNameButton = 'p-3 cursor-pointer absolute bottom-0 left-6/12 -translate-x-6/12 translate-y-6/12 w-7/12 rounded-4xl flex items-center select-none';
+const classNameButton = 'px-5 py-3 cursor-pointer absolute bottom-0 left-6/12 -translate-x-6/12 translate-y-6/12 w-7/12 rounded-4xl flex items-center select-none';
 
 interface Props {
     product: Product
@@ -21,7 +21,7 @@ function ProductCard({ product }: Props) {
                     <source srcSet={image.mobile} media="(max-width: 375px)" />
                     <source srcSet={image.tablet} media="(max-width: 992px)" />
                     <img
-                        className={`rounded-xl w-full ${productCart ? 'border-3 border-red' : ''}`}
+                        className={`rounded-lg w-full ${productCart ? 'border-3 border-red' : ''}`}
                         src={image.desktop}
                         alt={`Image of ${name}`}
                     />
@@ -59,11 +59,11 @@ function ProductCard({ product }: Props) {
                                 onClick={() => addProduct(product)}
                             >
                                 <img
-                                    className="w-6 h-6"
+                                    className="w-5 h-5"
                                     src="/images/icon-add-to-cart.svg"
                                     alt="Cart Icon"
                                 />
-                                <span className="text-lg font-semibold">Add to cart</span>
+                                <span className="font-semibold">Add to cart</span>
                             </button>
                         )
                 }

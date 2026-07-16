@@ -10,7 +10,7 @@ function Cart() {
     return (
         <aside>
             <section className="flex flex-col gap-y-2 bg-white p-8 sticky top-10 rounded-xl">
-                <h2 className="text-3xl text-red font-bold">Your Cart ({products.length})</h2>
+                <h2 className="text-2xl text-red font-bold">Your Cart ({products.length})</h2>
                 {
                     products.length === 0
                         ? (
