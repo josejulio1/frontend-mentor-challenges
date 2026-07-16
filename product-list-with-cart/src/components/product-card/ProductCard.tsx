@@ -1,7 +1,7 @@
 import type { Product } from "../../models/product.model";
 import useCart from "../../stores/cart.store";
 
-const classNameButton = 'px-5 py-3 cursor-pointer absolute bottom-0 left-6/12 -translate-x-6/12 translate-y-6/12 w-7/12 rounded-4xl flex items-center select-none';
+const classNameButton = 'px-5 py-3 cursor-pointer absolute bottom-0 left-6/12 -translate-x-6/12 translate-y-6/12 max-xl:w-7/12 xl:w-10/12 rounded-4xl flex items-center select-none';
 
 interface Props {
     product: Product
