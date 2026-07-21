@@ -1,0 +1,94 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex-basis: 375px;
+    border-right: 1px solid var(--neutral-400);
+}
+
+.sidebar {
+    padding: 1rem;
+    height: 100dvh;
+}
+
+.sidebar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__button {
+    border: 1px solid var(--neutral-400);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: .3rem;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.sidebar__details,
+.nav {
+    flex: 1;
+}
+
+.sidebar__details {
+    display: flex;
+    flex-direction: column;
+}
+
+.temperature-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    position: relative;
+    background-color: var(--sun-200);
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.temperature-card img {
+    position: absolute;
+    right: 0;
+    top: -25%;
+    right: -1%;
+}
+
+.temperature-card__title,
+.temperature-card__info {
+    color: var(--neutral-600);
+}
+
+.temperature-card__title {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.temperature-card__degrees {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Fraunces';
+}
+
+.separator {
+    border: 1px solid var(--neutral-400);
+}
+
+.separator-dashed {
+    border-style: dashed;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    row-gap: .4rem;
+    color: var(--neutral-600);
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.address address {
+    font-style: normal;
+}

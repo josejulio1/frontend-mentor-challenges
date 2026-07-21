@@ -1,0 +1,44 @@
+.nav,
+.nav-item,
+.nav-item__details,
+.nav-item__notifications {
+    display: flex;
+}
+
+.nav {
+    flex-direction: column;
+    row-gap: .4rem;
+}
+
+.nav-item,
+.nav-item__notifications {
+    align-items: center;
+}
+
+.nav-item {
+    column-gap: 1rem;
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    transition: .3s background-color;
+}
+
+.nav-item:hover,
+.nav-item--selected {
+    background-color: var(--neutral-0);
+}
+
+.nav-item__details {
+    column-gap: .8rem;
+    flex: 1;
+}
+
+.nav-item__notifications {
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    background-color: var(--terracota-700);
+    color: var(--neutral-0);
+    border-radius: 50%;
+    font-size: .8rem;
+    font-family: 'Fraunces';
+}
